@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,5 +11,22 @@
 
     <title>Weather App</title>
   </head>
-  <body></body>
+  <body>
+    <section class="card">
+      <form class="search">
+        <label for="search" class="sr-only">Pesquisar cidade:</label>
+        <input
+          type="text"
+          name="search-field"
+          id="search-field"
+          class="search__input"
+          placeholder="Por favor digite o nome da cidade"
+          spellcheck="false"
+        />
+        <button class="btn" type="submit">
+          <img src="./assets/images/search.png" alt="Ícone de pesquisa" />
+        </button>
+      </form>
+    </section>
+  </body>
 </html>
