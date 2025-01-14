@@ -90,3 +90,54 @@ body {
   outline: 0;
   cursor: pointer;
 }
+
+/************/
+/* WEATHER */
+/**********/
+
+.weather__icon {
+  width: 17rem;
+  margin-top: 3rem;
+}
+
+.weather__temperature {
+  font-size: 8rem;
+  font-weight: 500;
+}
+
+.weather__city {
+  margin-top: -1rem;
+  font-size: 4.8rem;
+  font-weight: inherit;
+}
+
+.weather__details {
+  margin-top: 5rem;
+  padding: 0 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.weather__details__col {
+  text-align: left;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.weather__details__icon {
+  width: 4rem;
+}
+
+.weather__humidity,
+.weather__wind {
+  margin-top: -0.5rem;
+  font-size: 2.8rem;
+}
+
+.weather__details__label {
+  font-size: 1.6rem;
+}
