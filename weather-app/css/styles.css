@@ -145,3 +145,13 @@ body {
 .weather__details__label {
   font-size: 1.6rem;
 }
+
+/**********/
+/* ERROR */
+/********/
+
+.error {
+  margin: 1.4rem 0 0 1rem;
+  font-size: 1.4rem;
+  text-align: left;
+}

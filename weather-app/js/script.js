@@ -3,7 +3,7 @@
 class App {
   // Elements
   _search = document.querySelector(".search");
-  _errorBox = document.querySelector(".card__error-box");
+  _error = document.querySelector(".error");
   _weatherBox = document.querySelector(".weather");
   _weatherIcon = document.querySelector(".weather__icon");
   _cityName = document.querySelector(".weather__city");
@@ -29,11 +29,11 @@ class App {
   }
 
   _displayError(message) {
-    this._errorBox.textContent = message;
-    this._errorBox.classList.remove("hidden");
+    this._error.textContent = message;
+    this._error.classList.remove("hidden");
 
     setTimeout(() => {
-      this._errorBox.classList.add("hidden");
+      this._error.classList.add("hidden");
     }, 2000);
   }
 
@@ -56,7 +56,7 @@ class App {
       this._toggleWeatherBox();
     } catch (err) {
       console.error(err.message);
-      this._toggleWeatherBox();
+      // this._toggleWeatherBox();
       this._displayError(err.message);
     }
   }
