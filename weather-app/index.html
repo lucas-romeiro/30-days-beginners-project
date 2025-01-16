@@ -12,58 +12,69 @@
     <title>Weather App</title>
   </head>
   <body>
-    <section class="card">
-      <form class="search">
-        <label for="query" class="sr-only">Pesquisar cidade:</label>
+    <!-- Seção principal do conteúdo da aplicação -->
+    <section class="weather-card">
+      <!-- Formulário de busca -->
+      <form class="search-form" action="#" method="get">
+        <!-- Label associada ao campo de pesquisa (com foco em acessibilidade) -->
+        <label for="search-field" class="sr-only">Pesquisar cidade:</label>
+        <!-- Campo de entrada para a pesquisa -->
         <input
           type="text"
           name="query"
           id="search-field"
-          class="search__input"
-          placeholder="Por favor digite o nome da cidade"
+          class="search-form__input"
+          placeholder="Digite o nome da cidade"
           spellcheck="false"
+          required
         />
-        <button class="btn" type="submit">
+        <!-- Botão de pesquisa -->
+        <button class="search-form__button" type="submit">
           <img
             src="./assets/images/search.png"
-            alt="Ícone de pesquisa"
-            class="search__icon"
+            alt="Ícone de pesquisa por cidade"
+            class="search-form__icon"
           />
         </button>
       </form>
 
-      <p class="error hidden">Ivalida city name</p>
+      <!-- Mensagem de erro (visível apenas quando necessário) -->
+      <p class="error-message hidden" role="alert">Nome da cidade inválido</p>
 
-      <article class="weather hidden">
+      <!-- Exibição da previsão do tempo (escondida inicialmente) -->
+      <article class="weather-info hidden">
         <img
           src="./assets/images/rain.png"
           alt="Ícone de chuva"
-          class="weather__icon"
+          class="weather-info__icon"
         />
-        <h1 class="weather__temperature">22°C</h1>
-        <h2 class="weather__city">New York</h2>
+        <h1 class="weather-info__temperature">22°C</h1>
+        <h2 class="weather-info__city">New York</h2>
 
-        <div class="weather__details">
-          <div class="weather__details__col">
+        <!-- Detalhes adicionais da previsão do tempo -->
+        <div class="weather-info__details">
+          <!-- Coluna com informações de umidade -->
+          <div class="weather-info__details__column">
             <img
               src="./assets/images/humidity.png"
               alt="Ícone de umidade"
-              class="weather__details__icon"
+              class="weather-info__details__icon"
             />
-            <div class="weather__details__description">
-              <p class="weather__humidity">50%</p>
-              <p class="weather__details__label">Humidity</p>
+            <div class="weather-info__details__description">
+              <p class="weather-info__humidity">50%</p>
+              <p class="weather-info__details__label">Umidade</p>
             </div>
           </div>
-          <div class="weather__details__col">
+          <!-- Coluna com informações de vento -->
+          <div class="weather-info__details__column">
             <img
               src="./assets/images/wind.png"
               alt="Ícone de vento"
-              class="weather__details__icon"
+              class="weather-info__details__icon"
             />
-            <div class="weather__details__description">
-              <p class="weather__wind">15 km/h</p>
-              <p class="weather__details__label">Wind Speed</p>
+            <div class="weather-info__details__description">
+              <p class="weather-info__wind">15 km/h</p>
+              <p class="weather-info__details__label">Velocidade do vento</p>
             </div>
           </div>
         </div>

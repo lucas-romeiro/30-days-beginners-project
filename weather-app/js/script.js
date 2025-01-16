@@ -17,8 +17,8 @@ class App {
     this._search.addEventListener("submit", this._getQuery.bind(this));
   }
 
-  _toggleWeatherBox() {
-    this._weatherBox.classList.toggle("hidden");
+  _showWeatherBox() {
+    this._weatherBox.classList.remove("hidden");
   }
 
   _updateUI(data) {
@@ -31,6 +31,7 @@ class App {
   _displayError(message) {
     this._error.textContent = message;
     this._error.classList.remove("hidden");
+    this._weatherBox.classList.add("hidden");
 
     setTimeout(() => {
       this._error.classList.add("hidden");
@@ -53,10 +54,9 @@ class App {
       const data = await this._getData(city);
       this._updateUI(data);
       this._updateIconImage(data.weather[0].main);
-      this._toggleWeatherBox();
+      this._showWeatherBox();
     } catch (err) {
       console.error(err.message);
-      // this._toggleWeatherBox();
       this._displayError(err.message);
     }
   }
