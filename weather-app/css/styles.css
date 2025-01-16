@@ -1,0 +1,216 @@
+/************/
+/* GENERAL */
+/**********/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* Facilita cálculos de rem, 1rem = 10px */
+}
+
+body {
+  font-family: sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  background-color: #222;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.hidden {
+  display: none;
+  /* Transição suave quando o elemento for exibido ou oculto */
+  transition: opacity 0.3s ease;
+}
+
+/*****************/
+/* WEATHER CARD */
+/***************/
+
+.weather-card {
+  width: 90%;
+  max-width: 47rem;
+  padding: 4rem 3.5rem;
+  color: #fff;
+  background: linear-gradient(135deg, #00feba, #5b548a);
+  border-radius: 20px;
+  text-align: center;
+}
+
+/****************/
+/* SEARCH FORM */
+/**************/
+
+.search-form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.search-form__input {
+  height: 6rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.8rem;
+  color: #555;
+  background-color: #ebfffc;
+  border-radius: 3rem;
+  border: 0;
+  outline: 0;
+  flex: 1;
+  transition: transform 0.3s ease; /* Efeito de transição */
+}
+
+.search-form__input:hover {
+  transform: scale(1.05); /* Pequeno zoom ao passar o mouse */
+}
+
+.search-form__icon {
+  width: 1.6rem;
+}
+
+.search-form__button {
+  width: 6rem;
+  height: 6rem;
+  background-color: #ebfffc;
+  border-radius: 50%;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.search-form__button:hover {
+  transform: scale(1.1); /* Efeito de transição no botão */
+}
+
+/*****************/
+/* WEATHER INFO */
+/***************/
+
+.weather-info__icon {
+  width: 17rem;
+  margin-top: 3rem;
+}
+
+.weather-info__temperature {
+  font-size: 8rem;
+  font-weight: 500;
+}
+
+.weather-info__city {
+  margin-top: -0.5rem;
+  font-size: 4.8rem;
+  font-weight: inherit;
+}
+
+.weather-info__details {
+  margin-top: 5rem;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.weather-info__details__column {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.weather-info__details__icon {
+  width: 4rem;
+}
+
+.weather-info__humidity,
+.weather-info__wind {
+  margin-top: -0.5rem;
+  font-size: 2.8rem;
+}
+
+.weather-info__details__label {
+  font-size: 1.6rem;
+}
+
+/******************/
+/* ERROR MESSAGE */
+/****************/
+
+.error-message {
+  margin: 1.4rem 0 0 1rem;
+  padding: 1rem;
+  font-size: 1.4rem;
+  text-align: left;
+  color: #610a0a; /* Cor de erro */
+  font-weight: bold;
+  background-color: rgba(255, 213, 204, 0.8);
+  border-radius: 11px;
+}
+
+/**********************/
+/* RESPONSIVE STYLES */
+/********************/
+
+@media (max-width: 768px) {
+  html {
+    font-size: 58%;
+  }
+
+  .weather-card {
+    padding: 2rem;
+  }
+
+  .search-form__input {
+    font-size: 1.6rem;
+  }
+
+  .weather-info__temperature {
+    font-size: 6rem;
+  }
+
+  .weather-info__city {
+    font-size: 3.6rem;
+  }
+
+  .weather-info__details__icon {
+    width: 3rem;
+  }
+
+  .weather-info__humidity,
+  .weather-info__wind {
+    font-size: 2.2rem;
+  }
+
+  .weather-info__details__label {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 56%;
+  }
+
+  .search-form {
+    gap: 1.2rem;
+  }
+}
