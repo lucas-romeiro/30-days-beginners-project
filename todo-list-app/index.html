@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,7 +9,30 @@
     <!-- Custom Script -->
     <script defer src="./js/script.js"></script>
 
-    <title>To-Do List</title>
+    <title>To-Do List App</title>
   </head>
-  <body></body>
+  <body>
+    <section class="todo-app">
+      <h1 class="todo-app__title">
+        To-Do List
+        <img
+          src="./assets/images/icon.png"
+          alt="Ícone To-Do List App"
+          class="todo-app__icon"
+        />
+      </h1>
+
+      <!-- Formulário para adicionar tarefas -->
+      <form class="todo-app__form">
+        <label for="todo-input" class="sr-only">Nova tarefa</label>
+        <input
+          type="text"
+          class="todo-app__input"
+          id="todo-input"
+          placeholder="Adicione seu texto"
+        />
+        <button type="submit" class="btn--add-task">Adicionar Tarefa</button>
+      </form>
+    </section>
+  </body>
 </html>
