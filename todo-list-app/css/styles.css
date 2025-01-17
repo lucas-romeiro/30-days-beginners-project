@@ -81,6 +81,40 @@ body {
   flex: 1;
 }
 
+.todo-app__task {
+  padding: 1.2rem 0.8rem 1.2rem 5rem;
+  font-size: 1.8rem;
+  list-style: none;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+
+.todo-app__task::before {
+  content: "";
+  position: absolute;
+  top: 0.8rem;
+  left: 0.8rem;
+  height: 2.8rem;
+  width: 2.8rem;
+  border-radius: 50%;
+  background-image: url("../assets/images/unchecked.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.todo-app__task.checked {
+  color: #555;
+  text-decoration: line-through;
+}
+
+.todo-app__task.checked::before {
+  background-image: url("../assets//images/checked.png");
+}
+
 /***********/
 /* BUTTON */
 /*********/
@@ -101,6 +135,21 @@ body {
 .btn--add-task:hover {
   background-color: #ff3e2f; /* Cor mais escura para hover */
   transform: scale(1.05); /* Efeito de foco */
+}
+
+.btn--delete {
+  margin-left: auto;
+  font-size: 1.6rem;
+  font-weight: 700;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.btn--delete:hover {
+  color: #ff3e2f;
+  transform: scale(1.2);
 }
 
 /*******************/
@@ -126,6 +175,16 @@ body {
   .todo-app__input {
     padding: 0.8rem;
     font-size: 1.2rem;
+  }
+
+  .todo-app__task {
+    padding: 1rem 0.6rem 1rem 4.5rem;
+    font-size: 1.6rem;
+  }
+
+  .todo-app__task::before {
+    height: 2.4rem;
+    width: 2.4rem;
   }
 
   .btn--add-task {
@@ -154,8 +213,22 @@ body {
     padding: 0.6rem;
   }
 
+  .todo-app__task {
+    padding: 1rem 0.6rem 1rem 3.5rem;
+    font-size: 1.4rem;
+  }
+
+  .todo-app__task::before {
+    height: 2rem;
+    width: 2rem;
+  }
+
   .btn--add-task {
     font-size: 1.2rem;
     padding: 1rem 3rem;
+  }
+
+  .btn--delete {
+    font-size: 1.4rem;
   }
 }
