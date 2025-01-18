@@ -34,6 +34,10 @@ body {
   width: 1px;
 }
 
+.hidden {
+  display: none;
+}
+
 /**************/
 /* TO-DO APP */
 /************/
@@ -150,6 +154,18 @@ body {
 .btn--delete:hover {
   color: #ff3e2f;
   transform: scale(1.2);
+}
+
+/******************/
+/* ERROR-MESSAGE */
+/****************/
+
+.error-message {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ff3e2f;
+  text-align: center;
+  transition: all 0.3s ease;
 }
 
 /*******************/
