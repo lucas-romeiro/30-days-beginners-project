@@ -35,19 +35,22 @@
       </h1>
 
       <!-- Formulário para adicionar tarefas -->
-      <form class="todo-app__form">
+      <form class="todo-app__form" aria-describedby="error-message">
         <label for="todo-input" class="sr-only">Nova tarefa</label>
         <input
           type="text"
           class="todo-app__input"
           id="todo-input"
           placeholder="Adicione seu texto"
+          aria-invalid="false"
+          aria-describedby="error-message"
         />
         <button type="submit" class="btn--add-task">Add</button>
       </form>
 
       <ul class="todo-app__list"></ul>
 
+      <!-- Mensagem de erro para o usuário -->
       <p class="error-message hidden"></p>
     </section>
   </body>
