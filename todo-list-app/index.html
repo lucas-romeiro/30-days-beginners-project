@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon em vários tamanhos para dispositivos móveis -->
+    <link rel="icon" href="./assets/favicon/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="./assets/favicon/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      sizes="192x192"
+      href="./assets/favicon/android-chrome-192x192.png"
+    />
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <!-- Ionicons -->
+    <script
+      defer
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      defer
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <!-- Custom Script -->
+    <script defer src="./js/script.js"></script>
+
+    <title>To-Do List App</title>
+  </head>
+  <body>
+    <section class="todo-app">
+      <h1 class="todo-app__title">
+        To-Do List
+        <img
+          src="./assets/images/icon.png"
+          alt="Ícone To-Do List App"
+          class="todo-app__icon"
+        />
+      </h1>
+
+      <!-- Formulário para adicionar tarefas -->
+      <form class="todo-app__form" aria-describedby="error-message">
+        <label for="todo-input" class="sr-only">Nova tarefa</label>
+        <input
+          type="text"
+          class="todo-app__input"
+          id="todo-input"
+          placeholder="Adicione seu texto"
+          aria-invalid="false"
+          aria-describedby="error-message"
+        />
+        <button type="submit" class="btn--add-task">Add</button>
+      </form>
+
+      <ul class="todo-app__list"></ul>
+
+      <!-- Mensagem de erro para o usuário -->
+      <p class="error-message hidden"></p>
+    </section>
+  </body>
+</html>

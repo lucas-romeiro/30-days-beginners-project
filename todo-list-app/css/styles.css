@@ -1,0 +1,250 @@
+/************/
+/* GENERAL */
+/**********/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  color: #333; /* Cor do texto */
+  background: linear-gradient(135deg, #153677, #4e085f);
+}
+
+/* Acessibilidade: sr-only */
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.hidden {
+  display: none;
+}
+
+/**************/
+/* TO-DO APP */
+/************/
+
+.todo-app {
+  width: 100%;
+  max-width: 54rem;
+  margin: 10rem auto 2rem;
+  padding: 4rem 3rem 7rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.todo-app__title {
+  margin-bottom: 2.4rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #002765;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.todo-app__icon {
+  width: 3.6rem;
+}
+
+.todo-app__form {
+  margin-bottom: 2.5rem;
+  padding-left: 2rem;
+  background-color: #edeef0;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todo-app__input {
+  padding: 1rem;
+  font-size: 1.4rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  flex: 1;
+}
+
+.todo-app__task {
+  padding: 1.2rem 0.8rem 1.2rem 5rem;
+  font-size: 1.8rem;
+  list-style: none;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+
+.todo-app__task::before {
+  content: "";
+  position: absolute;
+  top: 0.8rem;
+  left: 0.8rem;
+  height: 2.8rem;
+  width: 2.8rem;
+  border-radius: 50%;
+  background-image: url("../assets/images/unchecked.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.todo-app__task.checked {
+  color: #555;
+  text-decoration: line-through;
+}
+
+.todo-app__task.checked::before {
+  background-image: url("../assets//images/checked.png");
+}
+
+/***********/
+/* BUTTON */
+/*********/
+
+.btn--add-task {
+  padding: 1.6rem 5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #ff5945;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn--add-task:hover {
+  background-color: #ff3e2f; /* Cor mais escura para hover */
+  transform: scale(1.05); /* Efeito de foco */
+}
+
+.btn--delete {
+  margin-left: auto;
+  font-size: 1.6rem;
+  font-weight: 700;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.btn--delete:hover {
+  color: #ff3e2f;
+  transform: scale(1.2);
+}
+
+/******************/
+/* ERROR-MESSAGE */
+/****************/
+
+.error-message {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ff3e2f;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/*******************/
+/* RESPONSIVIDADE */
+/*****************/
+
+@media (max-width: 768px) {
+  .todo-app {
+    margin: 5rem auto 2rem;
+    padding: 3rem 2rem;
+    max-width: 48rem;
+  }
+
+  .todo-app__title {
+    font-size: 1.8rem;
+    gap: 1.4rem;
+  }
+
+  .todo-app__icon {
+    width: 3rem;
+  }
+
+  .todo-app__input {
+    padding: 0.8rem;
+    font-size: 1.2rem;
+  }
+
+  .todo-app__task {
+    padding: 1rem 0.6rem 1rem 4.5rem;
+    font-size: 1.6rem;
+  }
+
+  .todo-app__task::before {
+    height: 2.4rem;
+    width: 2.4rem;
+  }
+
+  .btn--add-task {
+    font-size: 1.4rem;
+    padding: 1.4rem 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .todo-app {
+    margin: 2.5rem auto 1rem;
+    padding: 1.5rem 1rem;
+    width: 85%;
+  }
+
+  .todo-app__title {
+    font-size: 1.6rem;
+    gap: 1rem;
+  }
+
+  .todo-app__icon {
+    width: 2.4rem;
+  }
+
+  .todo-app__input {
+    padding: 0.6rem;
+  }
+
+  .todo-app__task {
+    padding: 1rem 0.6rem 1rem 3.5rem;
+    font-size: 1.4rem;
+  }
+
+  .todo-app__task::before {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .btn--add-task {
+    font-size: 1.2rem;
+    padding: 1rem 3rem;
+  }
+
+  .btn--delete {
+    font-size: 1.4rem;
+  }
+}
