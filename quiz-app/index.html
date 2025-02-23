@@ -13,6 +13,61 @@
     <title>Quiz App</title>
   </head>
   <body>
-    <article class="app"></article>
+    <!-- App -->
+    <article class="app">
+      <h1 class="app__title">Simple Quiz</h1>
+
+      <!-- Quiz -->
+      <section class="quiz">
+        <h2 class="quiz__question">Question goes here</h2>
+
+        <div
+          class="quiz__answer-buttons"
+          role="listbox"
+          aria-labelledby="quiz-question"
+        >
+          <button
+            class="btn"
+            role="option"
+            aria-selected="false"
+            aria-label="Answer 1: Paris"
+          >
+            Answer 1
+          </button>
+          <button
+            class="btn"
+            role="option"
+            aria-selected="false"
+            aria-label="Answer 2: London"
+          >
+            Answer 2
+          </button>
+          <button
+            class="btn"
+            role="option"
+            aria-selected="false"
+            aria-label="Answer 3: Rome"
+          >
+            Answer 3
+          </button>
+          <button
+            class="btn"
+            role="option"
+            aria-selected="false"
+            aria-label="Answer 4: Madrid"
+          >
+            Answer 4
+          </button>
+        </div>
+
+        <button
+          class="btn--next"
+          id="next-question-button"
+          aria-label="Go to next question"
+        >
+          Next
+        </button>
+      </section>
+    </article>
   </body>
 </html>
