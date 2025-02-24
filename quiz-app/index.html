@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon em vários tamanhos para dispositivos móveis -->
+    <link rel="icon" href="./assets/favicon/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="./assets/favicon/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      sizes="192x192"
+      href="./assets/favicon/android-chrome-192x192.png"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <!-- Custom Script -->
+    <script defer src="./js/script.js"></script>
+
+    <title>Quiz App</title>
+  </head>
+  <body>
+    <!-- Main Content -->
+    <main class="app">
+      <h1 class="app__title">Simple Quiz</h1>
+
+      <!-- Quiz Section -->
+      <section class="quiz">
+        <h2 class="quiz__question" id="quiz-question">Question goes here</h2>
+
+        <div
+          class="quiz__answers"
+          role="listbox"
+          aria-labelledby="quiz-question"
+        ></div>
+
+        <button
+          class="btn--next"
+          id="next-question-button"
+          aria-label="Go to next question"
+        >
+          Next
+        </button>
+
+        <button
+          class="btn--play-again"
+          id="play-again-button"
+          aria-label="Start the quiz again"
+        >
+          Play Again
+        </button>
+      </section>
+    </main>
+  </body>
+</html>
