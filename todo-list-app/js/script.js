@@ -62,17 +62,7 @@ class App {
     const taskElement = e.target.closest(".todo-app__task");
     if (!taskElement) return;
 
-    // Marca a tarefa como completa/incompleta
-    if (e.target.closest(".todo-app__task")) {
-      const taskIndex = Array.from(this._parentElement.children).indexOf(
-        taskElement
-      );
-      this._tasks[taskIndex].completed = !this._tasks[taskIndex].completed;
-      taskElement.classList.toggle("checked");
-      this._saveData(); // Atualiza o localStorage
-    }
-
-    // Exclui a tarefa
+    // Primeiro, verifica se o clique foi no botão de exclusão
     if (e.target.closest(".btn--delete")) {
       const taskIndex = Array.from(this._parentElement.children).indexOf(
         taskElement
@@ -80,7 +70,16 @@ class App {
       this._tasks.splice(taskIndex, 1); // Remove a tarefa do array
       taskElement.remove(); // Remove a tarefa do DOM
       this._saveData(); // Atualiza o localStorage
+      return; // Interrompe a execução, evitando toggles indesejados
     }
+
+    // Se não foi no botão de exclusão, alterna o estado da tarefa
+    const taskIndex = Array.from(this._parentElement.children).indexOf(
+      taskElement
+    );
+    this._tasks[taskIndex].completed = !this._tasks[taskIndex].completed;
+    taskElement.classList.toggle("checked");
+    this._saveData(); // Atualiza o localStorage
   }
 
   // Adiciona uma nova tarefa
