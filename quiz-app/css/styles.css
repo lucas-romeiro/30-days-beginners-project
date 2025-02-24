@@ -10,6 +10,8 @@
   --color-white: #fff;
   --color-dark-grey-1: #333;
   --color-dark-grey-2: #222;
+  --color-accent-1: #9aeabc;
+  --color-accent-2: #ff9393;
 }
 
 * {
@@ -83,12 +85,17 @@ body {
   transition: all 0.3s ease;
 }
 
-.btn:hover {
+.btn:hover:not([disabled]) {
   background-color: var(--color-dark-grey-2);
   color: var(--color-white);
 }
 
-.btn--next {
+.btn:disabled {
+  cursor: no-drop;
+}
+
+.btn--next,
+.btn--play-again {
   width: 15rem;
   margin: 2rem auto 0;
   padding: 1rem;
@@ -100,4 +107,16 @@ body {
   border-radius: 4px;
   cursor: pointer;
   display: none;
+}
+
+/************/
+/* HELPERS */
+/**********/
+
+.correct {
+  background-color: var(--color-accent-1);
+}
+
+.incorrect {
+  background-color: var(--color-accent-2);
 }
