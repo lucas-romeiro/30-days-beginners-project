@@ -64,6 +64,7 @@ body {
   font-size: 1.8rem;
   font-weight: 600;
   color: var(--color-primary);
+  line-height: 1.6;
 }
 
 /************/
@@ -107,6 +108,7 @@ body {
   border-radius: 4px;
   cursor: pointer;
   display: none;
+  transition: opacity 0.3s ease;
 }
 
 /************/
@@ -119,4 +121,32 @@ body {
 
 .incorrect {
   background-color: var(--color-accent-2);
+}
+
+.correct,
+.incorrect {
+  transition: background-color 0.3s ease;
+}
+
+/*******************/
+/* RESPONSIVENESS */
+/*****************/
+
+@media (max-width: 768px) {
+  .app {
+    padding: 2rem;
+    margin: 4rem auto 0;
+  }
+
+  .app__title {
+    font-size: 2rem;
+  }
+
+  .quiz__question {
+    font-size: 1.6rem;
+  }
+
+  .btn {
+    font-size: 1.4rem;
+  }
 }

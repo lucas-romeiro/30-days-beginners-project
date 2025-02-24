@@ -49,8 +49,8 @@ const questions = [
 ];
 
 class App {
-  _questionTitle = document.querySelector(".quiz__question");
-  _answerButtons = document.querySelector(".quiz__answer-buttons");
+  _questionTitle = document.getElementById("quiz-question");
+  _answerButtons = document.querySelector(".quiz__answers");
   _btnNext = document.querySelector(".btn--next");
   _btnPlayAgain = document.querySelector(".btn--play-again");
 
@@ -86,21 +86,30 @@ class App {
   _showQuestion() {
     this._resetState();
     const currentQuestion = questions[this._currentQuestionIndex];
-    this._questionTitle.innerText = `${this._currentQuestionIndex + 1}. ${
+    this._questionTitle.textContent = `${this._currentQuestionIndex + 1}. ${
       currentQuestion.question
     }`;
 
-    currentQuestion.answers.forEach((answer) => {
-      const button = document.createElement("button");
-      button.innerText = answer.text;
-      button.classList.add("btn");
+    currentQuestion.answers.forEach((answer, index) => {
+      const button = this._createAnswerButton(answer, index);
       this._answerButtons.appendChild(button);
-      button.dataset.correct = answer.correct;
-
-      button.addEventListener("click", () =>
-        this._selectAnswer(button, answer.correct)
-      );
     });
+  }
+
+  _createAnswerButton(answer, index) {
+    const button = document.createElement("button");
+    button.textContent = answer.text;
+    button.classList.add("btn");
+    button.dataset.correct = answer.correct;
+    button.ariaLabel = `Answer ${index + 1}: ${answer.text}`;
+    button.ariaSelected = false;
+    button.role = "option";
+
+    button.addEventListener("click", () =>
+      this._selectAnswer(button, answer.correct)
+    );
+
+    return button;
   }
 
   _resetState() {
@@ -117,6 +126,8 @@ class App {
     } else {
       button.classList.add("incorrect");
     }
+
+    button.ariaSelected = true;
 
     // Desabilita todos os botões após a seleção de uma resposta
     Array.from(this._answerButtons.children).forEach((btn) => {
@@ -137,7 +148,9 @@ class App {
   }
 
   _endQuiz() {
-    this._questionTitle.innerText = `Quiz Over! Your score: ${this._score}/${questions.length}`;
+    this._questionTitle.innerText = `Quiz closed!\nYour score was ${
+      this._score * 2
+    }, you got ${this._score} out of ${questions.length} questions right!`;
     this._answerButtons.innerHTML = ""; // Limpa as opções de resposta
     this._btnNext.style.display = "none"; // Oculta o botão "Próximo"
     this._btnPlayAgain.style.display = "block"; // Exibe o botão "Play Again"
